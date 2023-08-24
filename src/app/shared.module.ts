@@ -1,12 +1,22 @@
 import {NgModule} from "@angular/core";
-import {CarouselComponent} from "./components/carousel/carousel.component";
+import {SelectComponent} from "./components/carousel/select.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {VISIBLE_ITEMS_COUNT} from "./tokens";
 import {Constants} from "./constants";
+import {MatInputModule} from "@angular/material/input";
+import {MatListModule} from "@angular/material/list";
+import {CommonModule} from "@angular/common";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
-  declarations: [CarouselComponent],
-  exports: [CarouselComponent, FormsModule, ReactiveFormsModule],
+  declarations: [SelectComponent],
+  exports: [SelectComponent, FormsModule, ReactiveFormsModule],
+  imports: [
+    MatInputModule,
+    MatListModule,
+    CommonModule,
+    ScrollingModule
+  ],
   providers: [
     {
       provide: VISIBLE_ITEMS_COUNT, useValue: Constants.DEFAULT_ITEMS_COUNT

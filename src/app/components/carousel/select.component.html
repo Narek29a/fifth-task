@@ -1,0 +1,14 @@
+<mat-form-field (click)="showSelectBody = true" #formFieldRef>
+  <mat-label >Select Item</mat-label>
+  <input matInput placeholder="Items..." #inputRef (input)="search(inputRef.value)" >
+
+</mat-form-field>
+<div style="position: relative">
+<mat-selection-list  *ngIf="showSelectBody" class="selection-list">
+  <cdk-virtual-scroll-viewport itemSize="48"  [ngStyle]="{'width': '400px', 'height': selectBodyViewPort}">
+    <mat-list-item *cdkVirtualFor="let item of  itemsToShow" (click)="selectItem(item)">
+      {{item.name}}
+    </mat-list-item>
+  </cdk-virtual-scroll-viewport>
+</mat-selection-list>
+</div>

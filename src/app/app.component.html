@@ -1,23 +1,60 @@
 <div class="container">
   <div class="box">
-    <carousel [items]="items"
-              [visibleItemsCount]="itemsCount"
-              (valueChanged)="valueChanged($event)"
-              (searchValueChanged)="searchValueChanged($event)"
-              [formControl]="itemFC">
-    </carousel>
-  </div>
-  <div class="box">
-    <ng-template [ngIf]="item">
-      {{item | json}}
-    </ng-template>
-
-    <ng-template [ngIf]="itemFC.value">
-      {{itemFC.value | json}}
-    </ng-template>
-
-    <ng-template [ngIf]="formGroup.controls['itemFCM'].value">
-      {{formGroup.controls['itemFCM'].value | json}}
-    </ng-template>
+    <div>
+      <div class="box">
+        <div>
+          <p>Form Control</p>
+        </div>
+        <my-select [items]="items"
+                   [visibleItemsCount]="itemsCount"
+                   (valueChanged)="valueChanged($event)"
+                   (searchValueChanged)="searchValueChanged($event)"
+                   [formControl]="itemFC">
+        </my-select>
+      </div>
+      <div class="box json-value">
+        <ng-template [ngIf]="itemFC.value">
+          {{itemFC.value | json}}
+        </ng-template>
+      </div>
+    </div>
+    <div>
+      <div class="box">
+        <div>
+          <p>NgModel</p>
+        </div>
+        <my-select [items]="items"
+                   [visibleItemsCount]="itemsCount"
+                   (valueChanged)="valueChanged($event)"
+                   (searchValueChanged)="searchValueChanged($event)"
+                   [(ngModel)]="item">
+        </my-select>
+      </div>
+      <div class="box json-value">
+        <ng-template [ngIf]="item">
+          {{item | json}}
+        </ng-template>
+      </div>
+    </div>
+    <div>
+      <div class="box">
+        <form [formGroup]="formGroup">
+          <div>
+            <p>Form Control Name</p>
+          </div>
+          <my-select [items]="items"
+                     [visibleItemsCount]="itemsCount"
+                     (valueChanged)="valueChanged($event)"
+                     (searchValueChanged)="searchValueChanged($event)"
+                     formControlName="itemFCM">
+          </my-select>
+        </form>
+      </div>
+      <div class="box json-value">
+        <ng-template [ngIf]="formGroup.controls['itemFCM'].value">
+          {{formGroup.controls['itemFCM'].value | json}}
+        </ng-template>
+      </div>
+    </div>
   </div>
 </div>

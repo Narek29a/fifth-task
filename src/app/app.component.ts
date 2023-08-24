@@ -17,8 +17,6 @@ export class AppComponent {
   selectedItemId!: number;
   searchValue: string = '';
   itemsCount: number = 5;
-  constructor() {
-  }
 
   items: Item[] = [
     {name: 'apple', id: 1},
