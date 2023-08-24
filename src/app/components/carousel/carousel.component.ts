@@ -84,7 +84,6 @@ export class CarouselComponent implements ControlValueAccessor, OnInit {
         this.inputRef.nativeElement.value = item.name;
         this.valueChanged.emit(item.id)
         this.searchValueChanged.emit(item.name);
-       // this.optionsContainer.style.display = 'none';
       });
       this.optionsContainer.appendChild(option);
     });
