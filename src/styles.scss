@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+input {
+  width: 250px;
+  height: 25px;
+  font-size: 18px;
+}
+
+.options-container {
+  font-size: 18px;
+  position: absolute;
+  background-color: #ebebeb;
+  width: 250px;
+  overflow: auto;
+
+}
+
+.option {
+  margin-left: 5px;
+  padding: 10px;
+}
+.option:hover {
+  background-color: #dfdfdf;
+}
