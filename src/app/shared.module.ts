@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {SelectComponent} from "./components/carousel/select.component";
+import {SelectComponent} from "./components/select/select.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {VISIBLE_ITEMS_COUNT} from "./tokens";
 import {Constants} from "./constants";
